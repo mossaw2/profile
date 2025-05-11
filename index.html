@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>デマカ星 by Project PALLOWEEN</title>
+  
+  <!-- OGP基本情報 -->
+<meta property="og:title" content="デマカ星 by Project PALLOWEEN">
+<meta property="og:description" content="中野ひとしによる創作活動の早見版。イベント予定・リンクまとめ">
+<meta property="og:image" content="https://mossaw.github.io/palloween-gate/ogp.png">
+<meta property="og:url" content="https://mossaw.github.io/palloween-gate/">
+<meta property="og:type" content="website">
+  
+  <!-- フォント読み込み -->
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+
+  <style>
+  /* --- 全体の基本設定 --- */
+  * {
+    box-sizing: border-box; /* 余白と枠線を含めて幅・高さを計算 */
+  }
+  body {
+    margin: 0;
+    font-family: 'Noto Sans JP', sans-serif; /* フォント */
+    background: #f0f0f5; /* 全体の背景 */
+    color: #333; /* 全体の文字色 */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem 1rem; /* 上下左右の余白 */
+  }
+
+  /* --- プロフィールセクション --- */
+  .profile {
+    text-align: center; /* 中央寄せ */
+  }
+
+  /* --- アバターと切り替えQR --- */
+  .avatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #fff;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+}
+.avatar.qr {
+  width: 130px;
+  height: 130px;
+  border-radius: 12px;
+}
+
+  /* --- タイトル部分（最上部） --- */
+  .title {
+    font-size: 1rem;
+    font-weight: bold;
+    margin: 1rem 0 0.2rem;
+  }
+
+  .subtitle {
+    font-size: 0.8rem;
+    margin: 0;
+  }
+
+  .desc {
+    font-size: 0.8rem;
+    color: #444;
+    margin-bottom: 1.5rem;
+  }
+
+  /* --- SNSアイコンリンク --- */
+.sns-link {
+  display: inline-flex;   /* アイコン中央揃え */
+  align-items: center;
+  justify-content: center;
+  background-color: #000;
+  border-radius: 8px;     /* 角丸 */
+  width: 25px;
+  height: 25px;
+  margin: 0.5rem 0;
+  padding: 5px;
+}
+
+.sns-icon {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+  /* --- 全カード共通スタイル --- */
+  .card {
+    background: white;
+    border-radius: 12px;
+    padding: 0.5rem 1rem;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* 優しい影 */
+    max-width: 500px;
+    width: 100%;
+  }
+
+  .card h2 {
+    font-size: 0.8rem; /* カードテキスト見出し */
+    margin: 0 0 0.2rem;
+    font-weight: bold;
+  }
+
+  .card p {
+    font-size: 0.7rem; /* カードテキスト本文 */
+    margin: 0;
+    color: #555;
+  }
+
+
+  /* --- カードの一覧 --- */
+  .card-list {
+    width: 100%;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem; /* カード同士の間隔 */
+  }
+
+  /* --- リンクカードの基本スタイル --- */
+  .link-card {
+    display: flex;
+    align-items: center;
+    text-decoration: none; /* 下線を消す */
+    color: #333;
+    font-weight: 500;
+    transition: transform 0.1s ease, box-shadow 0.2s ease; /* ホバーアニメ */
+  }
+
+  .link-card:hover {
+    transform: translateY(-2px); /* ホバーで少し上に動く */
+    box-shadow: 0 6px 14px rgba(0,0,0,0.15); /* 浮いてる影をつける */
+  }
+
+  .link-icon {
+    width: 1.5rem;
+    height: 1.5rem;
+    margin-right: 1.2rem;
+    object-fit: contain; /* アイコンが崩れないように */
+  }
+
+  /* --- フッター（著作情報） --- */
+  .footer {
+    margin-top: 1rem;
+    padding: 1rem;
+    font-size: 0.8rem;
+    color: #888;
+    text-align: center;
+  }
+
+  /* --- モバイル用調整 --- */
+  @media (max-width: 600px) {
+    .title {
+      font-size: 1.2rem;
+    }
+  }
+</style>
+</head>
+
+<!-- ここから本文 -->
+<body>
+  <div class="profile">
+    <img src="avatar.png" alt="プロフィール画像" class="avatar" id="avatar-img">
+    <h2 class="title">デマカ星 by Project PALLOWEEN</h2>
+    <h3 class="subtitle">by 中野ひとし</h3>
+    <a href="https://x.com/mossaw" target="_blank" class="sns-link">
+      <img src="x-icon.png" alt="" class="sns-icon">
+    </a>
+    <p class="desc">中野ひとしによる創作活動の早見版です</p>
+  </div>
+
+  <div class="card-list">
+
+<!-- ここから個別カード -->
+
+    <a href="https://mossaw.blog.fc2.com/" target="_blank" class="link-card card">
+      <img src="pencil.png" class="link-icon" alt="">
+      <div>
+        <h2>かにっき</h2>
+        <p>ブログ 現状メインコンテンツ</p>
+      </div>
+    </a>
+
+    <div class="card">
+      <h2>イベント参加予定</h2>
+      <p>2025/11/16 スパーク / サークル / 二次創作合同誌予定<br>コミティア、M3、文フリ参加検討中</p>
+    </div>
+
+    <a href="https://www.pixiv.net/artworks/118831437" target="_blank" class="link-card card">
+      <img src="note.png" class="link-icon" alt="">
+      <div>
+        <h2>設定資料集</h2>
+        <p>世界観・用語・キャラ紹介</p>
+      </div>
+    </a>
+
+    <a href="https://mossaw.jimdofree.com/" target="_blank" class="link-card card">
+      <img src="home.png" class="link-icon" alt="">
+      <div>
+        <h2>公式サイト</h2>
+        <p>活動詳細はこちら</p>
+      </div>
+    </a>
+
+    <a href="https://wavebox.me/wave/bd0nkiazkup6v49i/" target="_blank" class="link-card card">
+      <img src="mail.png" class="link-icon" alt="">
+      <div>
+        <h2>wavebox</h2>
+        <p>感想・連絡フォーム</p>
+      </div>
+    </a>
+    
+<!-- 個別カードここまで -->
+
+  </div>
+
+<!-- フッター -->
+  <footer class="footer">
+    <small>Copyright Ⓒ 2020-2025 Project PALLOWEEN All rights reserved.</small>
+  </footer>
+
+<!-- アバター切り替えスクリプト -->
+<script>
+  const avatarImg = document.getElementById("avatar-img");
+  let isAvatar = true;
+
+  avatarImg.addEventListener("click", () => {
+    if (isAvatar) {
+      avatarImg.src = "avatar-qr.png";
+      avatarImg.classList.add("qr");
+    } else {
+      avatarImg.src = "avatar.png";
+      avatarImg.classList.remove("qr");
+    }
+    isAvatar = !isAvatar;
+  });
+</script>
+
+</body>
+</html>
